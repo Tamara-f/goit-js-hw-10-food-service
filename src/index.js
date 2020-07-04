@@ -8,7 +8,7 @@ const Theme = {
 const body = document.querySelector('body');
 body.classList.add = Theme.LIGHT;
 const input = document.querySelector('input.js-switch-input');
-
+console.log(input);
 input.addEventListener('change', event => {
   if (event.target.checked === true) {
     body.classList = Theme.DARK;
@@ -21,6 +21,10 @@ input.addEventListener('change', event => {
 const savedTheme = localStorage.getItem('current-theme');
 if (savedTheme) {
   body.classList = savedTheme;
+}
+if (savedTheme === 'dark-theme') {
+  input.checked = 'checked';
+  console.log('ok');
 }
 
 const menuItems = document.querySelector('.js-menu');
